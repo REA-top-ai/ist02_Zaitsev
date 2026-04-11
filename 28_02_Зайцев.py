@@ -16,7 +16,7 @@ def parse_log_line(line: str) -> Dict[str, Any]:
     for key, value in pairs:
         try:
             if '.' in value:
-                result[key] = float(value)
+                result[key] = float(value) #наверное тут бы лучше через get(key), вдруг ключа не окажется
             else:
                 result[key] = int(value)
         except ValueError:
